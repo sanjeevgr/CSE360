@@ -3,11 +3,12 @@ package cse360assignment02;
 * The Adding Machine class has several methods 
 * that model basic operations.
 * @author  Sanjeev Ganga Raju
-* @version 1.0
-* @since   2020-10-06
+* @version 2.0
+* @since   2020-10-07
 */
 public class AddingMachine {
 	private int total;
+	private String transHistory = "0 ";
 	/**
 	 * This is the class constructor
 	 */
@@ -16,33 +17,39 @@ public class AddingMachine {
 	}
 	/**
 	 * getTotal returns value of total
-	 * @return 0
+	 * @return current value of "total" after operations
 	 */
 	public int getTotal () {
-	    return 0;
+	    return total;
 	}
 	/**
-	 * add method adds values
-	 * @param value
+	 * add method adds values and updates history
+	 * @param value that needs to be added to total
 	 */
 	public void add (int value) {
+		total += value;
+		transHistory += "+ " + value + " ";
 	}
 	/**
 	 * subtract method subtracts values
-	 * @param value
+	 * @param value that needs to be subtracted from total
 	 */
 	public void subtract (int value) {
+		total -= value;
+		transHistory += "- " + value + " ";
 	}
 	/**
-	 * toString method return string type of result
-	 * @return empty string
+	 * toString method returns string type of result
+	 * @return the history of transactions as a String
 	 */
 	public String toString () {
-	    return "";
+	    return transHistory;
 	}
 	/**
-	 * clear method 
+	 * clear method resets value of total and transHistory
 	 */
 	public void clear() {
+		total = 0;
+		transHistory = "0 ";
 	}
 }
